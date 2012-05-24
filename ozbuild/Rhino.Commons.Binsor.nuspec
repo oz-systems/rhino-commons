@@ -4,7 +4,7 @@
 		<id>Oz.Rhino.Commons.Binsor</id>
 		<version>2.0.0</version>
 		<title>Rhino.Commons.Binsor (Oz Version)</title>
-		<authors>Oren Eini (Ayende) & Craig Neuwirt</authors>
+		<authors>Oren Eini (Ayende) &amp; Craig Neuwirt</authors>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>A Boo DSL for the Castle Windsor container.</description>
 		<language>en-US</language>
