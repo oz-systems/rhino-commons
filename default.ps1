@@ -12,7 +12,7 @@ properties {
   $uploadScript = "C:\Builds\Upload\PublishBuild.build"
 } 
 
-task default -depends Release
+task default -depends Compile
 
 task Clean { 
   remove-item -force -recurse $buildartifacts_dir -ErrorAction SilentlyContinue 
