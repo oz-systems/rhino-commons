@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+		<id>Oz.Rhino.Commons.Binsor</id>
+		<version>2.0.0</version>
+		<title>Rhino.Commons.Binsor (Oz Version)</title>
+		<authors>Oren Eini (Ayende) & Craig Neuwirt</authors>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>A Boo DSL for the Castle Windsor container.</description>
+		<language>en-US</language>
+		<projectUrl>https://github.com/oz-systems/rhino-commons</projectUrl>
+		<licenseUrl>https://github.com/oz-systems/rhino-commons/blob/master/license.txt</licenseUrl>
+		<tags>rhino castle windsor boo dsl</tags>
+	</metadata>
+    <dependencies>
+      <dependency id="Oz.Castle.Core" />
+      <dependency id="Oz.Castle.Windsor" />
+      <dependency id="IEBoo"/>
+    </dependencies>
+	<files>
+   	<file src="build\Rhino.Commons.Bindor.dll" target="lib" />
+	</files>
+</package>

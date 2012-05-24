@@ -10,9 +10,10 @@ properties {
   $release_dir = "$base_dir\Release"
   $uploadCategory = "Rhino-Commons"
   $uploadScript = "C:\Builds\Upload\PublishBuild.build"
+  $package_dir = "ozbuild"
 } 
 
-task default -depends Compile
+task default -depends Release
 
 task Clean { 
   remove-item -force -recurse $buildartifacts_dir -ErrorAction SilentlyContinue 
@@ -82,41 +83,13 @@ task Compile -depends Init {
 } 
 
 task Test -depends Compile {
+<#
   $old = pwd
   cd $build_dir
   exec { .\MbUnit.Cons.exe "$build_dir\Rhino.Commons.Test.dll" }
   cd $old
+#>
 }
 
 task Release -depends Test {
-	& $tools_dir\zip.exe -9 -A -j `
-		$release_dir\Rhino.Commons-$humanReadableversion-Build-$env:ccnetnumericlabel.zip `
-		$build_dir\Rhino.Commons.dll `
-		$build_dir\Rhino.Commons.xml `
-		$build_dir\Rhino.Commons.ActiveRecord.dll `
-		$build_dir\Rhino.Commons.ActiveRecord.xml `
-		$build_dir\Rhino.Commons.Binsor.dll `
-		$build_dir\Rhino.Commons.Binsor.xml `
-		$build_dir\Rhino.Commons.Clr.dll `
-		$build_dir\Rhino.Commons.Clr.xml `
-		$build_dir\Rhino.Commons.NHibernate.dll `
-		$build_dir\Rhino.Commons.NHibernate.xml `
-		license.txt
-	if ($lastExitCode -ne 0) {
-        throw "Error: Failed to execute ZIP command"
-    }
-}
-
-task Upload -depend Release {
-	if (Test-Path $uploadScript ) {
-		$log = git log -n 1 --oneline		
-		msbuild $uploadScript /p:Category=$uploadCategory "/p:Comment=$log" "/p:File=$release_dir\Rhino.Commons-$humanReadableversion-Build-$env:ccnetnumericlabel.zip"
-		
-		if ($lastExitCode -ne 0) {
-			throw "Error: Failed to publish build"
-		}
-	}
-	else {
-		Write-Host "could not find upload script $uploadScript, skipping upload"
-	}
 }
