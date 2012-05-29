@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-		<id>Oz.Rhino.Commons.Binsor</id>
+		<id>Rhino.Commons.Binsor</id>
 		<version>2.0.0</version>
 		<title>Rhino.Commons.Binsor (Oz Version)</title>
 		<authors>Oren Eini (Ayende) &amp; Craig Neuwirt</authors>
@@ -12,9 +12,9 @@
 		<licenseUrl>https://github.com/oz-systems/rhino-commons/blob/master/license.txt</licenseUrl>
 		<tags>rhino castle windsor boo dsl</tags>
     	<dependencies>
-     		<dependency id="Oz.Castle.Core" />
-      	<dependency id="Oz.Castle.Windsor" />
-      	<dependency id="IEBoo"/>
+     		<dependency id="Castle.Core" version="3.0.0" />
+      	<dependency id="Castle.Windsor" version="3.0.0" />
+      	<dependency id="Boo" version="0.9.4" />
     	</dependencies>
 	</metadata>
 	<files>
